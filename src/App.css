@@ -1,38 +1,397 @@
-.App {
+.nk-header-menu .nk-navbar .navbar-mobile .navbar-active{
+  z-index: 999999 !important;
+  position:"fixed"!important;
+  height:"100vh"!important;
+  overflow-y:"hidden"!important;
+}
+
+textarea.main-form-text {
+  min-height: auto;
+  margin-bottom: 0;
+}
+
+.login-box {
+width: 90vw;
+max-width: 400px;
+padding: 40px;
+margin: 20px auto;
+background: transparent;
+box-sizing: border-box;
+box-shadow: 0 15px 25px rgb(193 193 193 / 60%);
+border-radius: 10px;
+}
+
+.login-box p:first-child {
+  margin: 0 0 15px;
+  padding: 0;
+  color: #6a6a6a;
   text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+textarea .form-control{
+  height: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-box .user-box {
+position: relative;
+margin-bottom: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.login-box .user-box input {
+width: 100%;
+padding: 0 0 5px 10px;
+font-size: 16px;
+color: #795548;
+/* margin-bottom: 30px; */
+border: none;
+border-bottom: 1px solid #795548;
+outline: none;
+background: transparent;
+}
+
+.login-box .user-box label {
+position: absolute;
+top: 0;
+left: 0;
+padding: 0 0 5px 10px;
+font-size: 16px;
+color: #795548;
+pointer-events: none;
+transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+top: -20px;
+left: 0;
+color: #795548;
+font-size: 12px;
+}
+
+.login-box form a {
+position: relative;
+display: inline-block;
+padding: 10px 20px;
+font-weight: bold;
+color: #795548;
+font-size: 16px;
+text-decoration: none;
+text-transform: uppercase;
+overflow: hidden;
+transition: .5s;
+margin-top: 40px;
+letter-spacing: 3px
+}
+
+.login-box a:hover {
+  background: #0062ff;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.login-box a span {
+position: absolute;
+display: block;
+}
+
+.login-box a span:nth-child(1) {
+top: 0;
+left: -100%;
+width: 100%;
+height: 2px;
+background: linear-gradient(90deg, transparent, #795548);
+animation: btn-anim1 1.5s linear infinite;
+}
+
+@keyframes btn-anim1 {
+0% {
+  left: -100%;
+}
+
+50%,100% {
+  left: 100%;
+}
+}
+
+.login-box a span:nth-child(2) {
+top: -100%;
+right: 0;
+width: 2px;
+height: 100%;
+background: linear-gradient(180deg, transparent, #795548);
+animation: btn-anim2 1.5s linear infinite;
+animation-delay: .375s
+}
+
+@keyframes btn-anim2 {
+0% {
+  top: -100%;
+}
+
+50%,100% {
+  top: 100%;
+}
+}
+
+.login-box a span:nth-child(3) {
+bottom: 0;
+right: -100%;
+width: 100%;
+height: 2px;
+background: linear-gradient(270deg, transparent, #795548);
+animation: btn-anim3 1.5s linear infinite;
+animation-delay: .75s
+}
+
+@keyframes btn-anim3 {
+0% {
+  right: -100%;
+}
+
+50%,100% {
+  right: 100%;
+}
+}
+
+.login-box a span:nth-child(4) {
+bottom: -100%;
+left: 0;
+width: 2px;
+height: 100%;
+background: linear-gradient(360deg, transparent, #795548);
+animation: btn-anim4 1.5s linear infinite;
+animation-delay: 1.125s
+}
+
+@keyframes btn-anim4 {
+0% {
+  bottom: -100%;
+}
+
+50%,100% {
+  bottom: 100%;
+}
+}
+
+.login-box p:last-child {
+color: #aaa;
+font-size: 14px;
+}
+
+.login-box a.a2 {
+color: #fff;
+text-decoration: none;
+}
+
+.login-box a.a2:hover {
+background: transparent;
+color: #aaa;
+border-radius: 5px;
+}
+.form-control{
+  padding: 0 0 5px 10px;
+  color: #795548;
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid;
+  margin-bottom: 30px;
+}
+.form-control:focus {
+  color: #795548;
+  background-color: transparent;
+  border-color: #fff;
+  outline: 0;
+  box-shadow: none;
+  border-bottom: 1px solid;
+}
+.form-control option {
+    color: #795548;
+    background: #f8f6e7!important;
+}
+.form-control option:hover{
+    color: #795548;
+    background: #cb795c!important;
+}
+.main-form-text::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #795548!important;
+  opacity: 1; /* Firefox */
+}
+
+.main-form-text:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #795548!important;
+}
+
+.main-form-text::-ms-input-placeholder { /* Microsoft Edge */
+  color: #795548!important;
+}
+
+/* Modal form css start */
+.subscribe {
+  padding: 1rem 2rem 2rem;
+  background-color: #FFF;
+  border-radius: 4px;
+  color: #333;
+  box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  width: 100%;
+}
+
+.subscribe:after {
+  position: absolute;
+  content: "";
+  right: -10px;
+  bottom: 27px;
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #1a044e;
+}
+
+.modal-content{
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+
+.subscribe p {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  line-height: 38px;
+}
+
+.subscribe input {
+  border: none;
+  border-bottom: 2px solid #d4d4d4;
+  padding: 10px;
+  width: 100%;
+  background: transparent;
+  transition: all .25s ease;
+  font-size: 14px;
+  background: #ededed;
+  /* margin-bottom: 1.25rem; */
+}
+
+/* .subscribe input:focus {
+  outline: none;
+  border-bottom: 2px solid #0d095e;
+} */
+
+/* .subscribe select { */
+  /* border: none;
+  border-bottom: 2px solid #d4d4d4; */
+  /* padding: 10px; */
+  /* width: 100%;
+  background: transparent;
+  transition: all .25s ease;
+  font-size: 14px;
+  background: #ededed; */
+  /* margin-bottom: 1.25rem; */
+/* } */
+
+.subscribe select:focus {
+  outline: none;
+  border-bottom: 2px solid #0d095e;
+}
+
+.subscribe .subscribe-input-field{
+  margin-bottom: 1.25rem;
+}
+
+.subscribe .submit-btn {
+  position: absolute;
+  border-radius: 30px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  background-color: #0062ff;
+  color: #FFF;
+  padding: 12px 25px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  right: -10px;
+  bottom: -20px;
+  cursor: pointer;
+  transition: all .25s ease;
+  box-shadow: -5px 6px 20px 0px rgba(26, 26, 26, 0.4);
+  outline: 0;
+  border: 0;
+}
+
+.subscribe .submit-btn:hover {
+  background-color: #07013d;
+  box-shadow: -5px 6px 20px 0px rgba(88, 88, 88, 0.569);
+}
+
+.modal-select {
+    padding: 10px;
+    color: #919191;
+    background: #ededed;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 2px solid #d4d4d4;
+    margin-bottom: 1.25rem;
+    font-size: 14px;
+}
+
+.modal-select:focus {
+    color: #838383;
+    background-color: #ededed;
+    border-color: #fff;
+    outline: 0;
+    box-shadow: none;
+}
+
+.modal-select option {
+    color: #795548;
+    background: #ededed!important;
+}
+
+textarea.modal-form-text {
+    /* min-height: auto; */
+    background: #ededed;
+    border-bottom: 2px solid #d4d4d4;
+    color: #919191;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.modal-form-text:focus {
+    color: #838383;
+    background-color: #ededed;
+    border-color: #fff;
+    outline: 0;
+    box-shadow: none;
+    border-bottom: 2px solid #0d095e;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #919191!important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #919191!important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #919191!important;
+}
+
+.modal-dialog {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* Modal form css end */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error{
+  color:#ff0800;
+  font-size: small;
 }

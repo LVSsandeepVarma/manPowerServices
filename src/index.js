@@ -3,12 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <GoogleReCaptchaProvider
+  reCaptchaKey="6LfngUwbAAAAAKuPu0K76s9aUHl0B5RFN10enmMi"
+  scriptProps={{
+    async: false,
+    defer: false,
+    appendTo: "head",
+    nonce: undefined,
+  }}
+>
     <App />
-  </React.StrictMode>
+    </GoogleReCaptchaProvider>
+  // {/* </React.StrictMode> */}
 );
 
 // If you want to start measuring performance in your app, pass a function
