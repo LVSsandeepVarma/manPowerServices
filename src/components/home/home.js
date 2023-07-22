@@ -30,7 +30,7 @@ export default function Home() {
       )}
       <div className="nk-app-root careers">
         <Header />
-        <Main />
+         <Main />
         <Footer />
         <a href="#" className={`scroll-top shadow animate animate-infinite animate-pulse animate-duration-2 ${scrolled ? "active":""}`}><em className="icon ni ni-chevrons-up"></em></a>
 

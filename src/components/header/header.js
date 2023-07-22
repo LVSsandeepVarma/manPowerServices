@@ -187,7 +187,11 @@ export default function Header() {
                     <ul className="nk-btn-group sm justify-content-center">
                       <li className="w-100">
                         <a
-                          href="#"
+                          data-toggle="modal"
+                          data-target="#myModal"
+                          onClick={() => {
+                            setShowModal(true);
+                          }}
                           target="_blank"
                           className="btn btn-primary w-100"
                         >
@@ -197,7 +201,7 @@ export default function Header() {
                               setToggled(false);
                             }}
                           >
-                            Button
+                            Get Started
                           </span>
                         </a>
                       </li>

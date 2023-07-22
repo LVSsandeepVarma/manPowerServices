@@ -10,55 +10,54 @@ export default function Main() {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [success, setSuccess] = useState("");
-  const [error, setError] = useState("")
-  const [loadStatus, setLoadStatus] = useState(false)
-  const [isOpen, setIsOpen] = useState(true)
+  const [error, setError] = useState("");
+  const [loadStatus, setLoadStatus] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const handleCloseModal = () => {
     setShowModal(false);
   };
 
-  const handleCloseFormModal=()=>{
-    setIsOpen(false)
-  }
+  const handleCloseFormModal = () => {
+    setIsOpen(false);
+  };
 
-  const handleEmailChange = (e)=>{
-      let emailValue = e?.target?.value
+  const handleEmailChange = (e) => {
+    let emailValue = e?.target?.value;
 
-      setEmail(emailValue)
-      let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
-      if(!regex.test(emailValue)){
-        // console.log("invalid email")
-          setEmailError("invalid email")
-      }else{
-        // console.log("valid email")
-        setEmailError("")
-      }
+    setEmail(emailValue);
+    let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!regex.test(emailValue)) {
+      // console.log("invalid email")
+      setEmailError("invalid email");
+    } else {
+      // console.log("valid email")
+      setEmailError("");
     }
+  };
 
-  const contactUsSubmit = async()=>{
+  const contactUsSubmit = async () => {
     setError("");
-    setSuccess("")
-    setLoadStatus(true)
+    setSuccess("");
+    setLoadStatus(true);
     // console.log("values", email)
-    try{
-      if(emailError == ""){
-
+    try {
+      if (emailError == "") {
         // api call
-        const response = {"data":{"status":true}}
+        const response = { data: { status: true } };
         // await axios.post("")
         // console.log(response?.data?.status)
-        if(response?.data?.status){
-          setSuccess("submitted successfully")
-        }else{
-          setError("submission failed")
+        if (response?.data?.status) {
+          setSuccess("submitted successfully");
+        } else {
+          setError("submission failed");
         }
-    }
-    }catch(err){
-      console.log("err", err)
+      }
+    } catch (err) {
+      console.log("err", err);
     }
     setEmail("");
-    setLoadStatus(false)
-  }
+    setLoadStatus(false);
+  };
 
   return (
     <>
@@ -69,9 +68,11 @@ export default function Main() {
           service={service}
         />
       )}
-      {loadStatus && <div className="preloader">
+      {loadStatus && (
+        <div className="preloader">
           <div className="loader"></div>
-        </div>}
+        </div>
+      )}
       <main className="nk-pages">
         <section className="nk-banner nk-banner-project-manage overflow-hidden bg-gray">
           <div className="nk-banner-wrap pb-lg-8">
@@ -280,8 +281,9 @@ export default function Main() {
                     <div>
                       <h6 className="mb-1">ELECTRICAL SERVICES</h6>
                       <p className="fs-16 text-gray-1200 line-clamp-2">
-                        What if you could get all your website tasks off your
-                        plate and focus only on the fun stuff.
+                        Electrical Services provides professional electrical
+                        services for residential, commercial, and industrial
+                        customers.
                       </p>
                     </div>
                     <a
@@ -312,8 +314,8 @@ export default function Main() {
                     <div className="mb-3">
                       <h6 className="mb-1">PLUMBING SERVICES</h6>
                       <p className="fs-16 text-gray-1200 line-clamp-2">
-                        I must explain to you how all this mistaken idea denou
-                        ncing plea sure and praising pain and typesetting.
+                        Professional plumbing solutions for all your residential
+                        and commercial needs.{" "}
                       </p>
                     </div>
                     <a
@@ -344,8 +346,10 @@ export default function Main() {
                     <div className="mb-3">
                       <h6 className="mb-1">PACKERS & MOVERS</h6>
                       <p className="fs-16 text-gray-1200 line-clamp-2">
-                        What if you could get all your website tasks off your
-                        plate and focus only on the fun stuff.
+                        Relocate with ease and efficiency with our packers &
+                        movers team. We handle your belongings with utmost care,
+                        ensuring a seamless and secure transition to your new
+                        destination.
                       </p>
                     </div>
                     <a
@@ -376,8 +380,8 @@ export default function Main() {
                     <div className="mb-3">
                       <h6 className="mb-1">GARBAGE</h6>
                       <p className="fs-16 text-gray-1200 line-clamp-2">
-                        Praising pain and typesetting industry has been the
-                        indust standard dummy text ever since was complete.
+                        Garbage Services are responsible for the collection and
+                        disposal of waste.{" "}
                       </p>
                     </div>
                     <a
@@ -408,8 +412,9 @@ export default function Main() {
                     <div className="mb-3">
                       <h6 className="mb-1">SCRAP</h6>
                       <p className="fs-16 text-gray-1200 line-clamp-2">
-                        Praising pain and typesetting industry has been the
-                        indust standard dummy text ever since was complete.
+                        Our expert scrap services deliver sustainable recycling
+                        solutions, transforming waste materials into valuable
+                        resources for a greener tomorrow.
                       </p>
                     </div>
                     <a
@@ -744,24 +749,31 @@ export default function Main() {
                     Frequently Asked Questions
                   </h2>
                   <p className="nk-section-text">
-                  Please take a moment to see if your question has already been answered in our FAQ section.
+                    Please take a moment to see if your question has already
+                    been answered in our FAQ section.
                   </p>
                   <ul className="nk-btn-group flex-wrap justify-content-center justify-content-lg-start pt-5">
                     <li>
-                      <a data-toggle="modal"
-                      data-target="#myModal"
-                      onClick={() => {
-                        setShowModal(true);
-                      }} className="btn btn-primary">
+                      <a
+                        data-toggle="modal"
+                        data-target="#myModal"
+                        onClick={() => {
+                          setShowModal(true);
+                        }}
+                        className="btn btn-primary"
+                      >
                         Get Started
                       </a>
                     </li>
                     <li>
-                      <a data-toggle="modal"
-                      data-target="#myModal"
-                      onClick={() => {
-                        setShowModal(true);
-                      }} className="btn btn-outline-primary">
+                      <a
+                        data-toggle="modal"
+                        data-target="#myModal"
+                        onClick={() => {
+                          setShowModal(true);
+                        }}
+                        className="btn btn-outline-primary"
+                      >
                         Contact Us
                       </a>
                     </li>
@@ -902,7 +914,8 @@ export default function Main() {
                             data-bs-target="#faqCollapseFour"
                           >
                             <span className="text-capitalize">
-                            Can I use your Manpower services website to hire outside benguluru?
+                              Can I use your Manpower services website to hire
+                              outside benguluru?
                             </span>
                             <em className="icon ni ni-plus on"></em>
                             <em className="icon ni ni-minus off"></em>
@@ -917,7 +930,8 @@ export default function Main() {
                         <div className="accordion-body">
                           <p className="fs-16">
                             {" "}
-                            No, our Manpower services website can help you find and hire talent from benguluru.{" "}
+                            No, our Manpower services website can help you find
+                            and hire talent from benguluru.{" "}
                           </p>
                         </div>
                       </div>
@@ -987,9 +1001,10 @@ export default function Main() {
                       className="nk-section-text"
                       data-aos="fade-up"
                       data-aos-delay="50"
-                      style={{fontWeight:"bold"}}
+                      style={{ fontWeight: "bold" }}
                     >
-                      Please contact us for a free consultation to discuss your specific needs and pricing.
+                      Please contact us for a free consultation to discuss your
+                      specific needs and pricing.
                     </p>
                   </div>
                 </div>
@@ -1015,28 +1030,43 @@ export default function Main() {
                             required
                             style={{ marginBottom: "0" }}
                           />
-                          {emailError.length>0 && <p className="error">{emailError}</p>}
+                          {emailError.length > 0 && (
+                            <p className="error">{emailError}</p>
+                          )}
                         </div>
                       </div>
                       <div className="col-md-3 ps-md-0">
                         {(emailError?.length > 0 || email?.length == 0) && (
                           <input
-                          disabled
-                          type="submit"
-                          className="btn btn-primary btn-block h-100"
-                          value="Contact Us"
-                        />
-                        ) }
-                        {(emailError?.length == 0 && email?.length >0 ) && (
+                            disabled
+                            type="submit"
+                            className="btn btn-primary btn-block h-100"
+                            value="Contact Us"
+                          />
+                        )}
+                        {emailError?.length == 0 && email?.length > 0 && (
                           <input
-                          type="submit"
-                          className="btn btn-primary btn-block h-100"
-                          value="Contact Us"
-                        />
-                        ) }
-         {(error?.length >0) && <FormMessage type={"Error"} message={error} isOpen={isOpen} close={handleCloseFormModal} />}
-          {(success?.length > 0) && <FormMessage type={"Success"} message={success} isOpen={isOpen} close={handleCloseFormModal}  />}
-                        
+                            type="submit"
+                            className="btn btn-primary btn-block h-100"
+                            value="Contact Us"
+                          />
+                        )}
+                        {error?.length > 0 && (
+                          <FormMessage
+                            type={"Error"}
+                            message={error}
+                            isOpen={isOpen}
+                            close={handleCloseFormModal}
+                          />
+                        )}
+                        {success?.length > 0 && (
+                          <FormMessage
+                            type={"Success"}
+                            message={success}
+                            isOpen={isOpen}
+                            close={handleCloseFormModal}
+                          />
+                        )}
                       </div>
                     </div>
                   </form>

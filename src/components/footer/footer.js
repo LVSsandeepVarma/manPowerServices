@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="nk-footer">
       <div className="nk-footer-top">
         <div className="container">
-        <hr className="my-6 my-lg-2"/>
+          <hr className="my-6 my-lg-2" />
           <div className="nk-footer-content row justify-content-xl-between">
             <div className="col-md-8 col-lg-6 col-xxl-6">
               <div className="nk-footer-brand pb-5 pb-lg-0">
@@ -25,9 +25,11 @@ export default function Footer() {
                     </a>
                   </div>
                   <p>
-                    Streamline your business operations with our powerful suite
-                    of solutions. Boost productivity and drive growth with
-                    NioLand.
+                    [Manpower services] provide a valuable resource for
+                    businesses of all sizes – from individual home to large
+                    corporate enterprises. Our services are tailored to the
+                    specific needs of our customers, providing them with the
+                    right skills and expertise to make their projects a success.
                   </p>
                 </div>
                 {/* <ul className="nk-footer-social">
@@ -107,7 +109,8 @@ export default function Footer() {
           <div className="nk-footer-content row justify-content-between">
             <div className="col-lg-6 px-0">
               <p className="nk-footer-copyright-text text-center text-lg-start">
-              Copyrights © 2023 All Rights Reserved by <a href="#">Man Power Services</a>.
+                Copyrights © 2023 All Rights Reserved by{" "}
+                <a href="#">Man Power Services</a>.
               </p>
             </div>
             <div className="col-lg-6 px-0">
